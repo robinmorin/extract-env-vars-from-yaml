@@ -1,9 +1,9 @@
-package org.time.gpo.cielo.extractenvvarsfromyaml.enums;
+package org.tools.dev.agile.projectfeaturestart.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.time.gpo.cielo.extractenvvarsfromyaml.helper.BeanStaticHelper;
-import org.time.gpo.cielo.extractenvvarsfromyaml.properties.PropertiesDefault;
+import org.tools.dev.agile.projectfeaturestart.helper.BeanStaticHelper;
+import org.tools.dev.agile.projectfeaturestart.properties.PropertiesDefault;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +15,7 @@ public enum ArgsEnum {
 
     PROFILE("--profile",
             "String usado nas construção do nome dos arquivos que serão gerados.\n\r" +
-                      "Por padrão o 'pattern file name' dos arquivos gerados é o seguinte..." +
+                      "\t\t\t\t\tPor padrão o 'pattern file name' dos arquivos gerados é o seguinte..." +
                       BeanStaticHelper.getBean(PropertiesDefault.class).getFile().getPattern(),
             true,
             "<profile>",
@@ -35,19 +35,22 @@ public enum ArgsEnum {
 
     PATTERN_FILE("--patternFile",
                 "Pattern ou estrutura pra construir os nomes dos arquivos. \n\r" +
-                          "Por padrão o 'pattern file name' dos arquivos gerados é o seguinte..." +
+                          "\t\t\t\t\tPor padrão o 'pattern file name' dos arquivos gerados é o seguinte..." +
                           BeanStaticHelper.getBean(PropertiesDefault.class).getFile().getPattern(),
                   false,
+                          "",
                           BeanStaticHelper.getBean(PropertiesDefault.class).getFile().getPattern()),
 
     GIT_DIRECTORY("--gitDirectory",
                  "Diretorio base onde existe o repositorio de arquivos charts",
                   false,
+                          "",
                           BeanStaticHelper.getBean(PropertiesDefault.class).getFile().getDirectory()),
 
     PREFIX_FILE_YAML("--prefixFileYaml",
                     "Nome prefix que possuem os arquivos charts que precisaram ser tratados",
                       false,
+                              "",
                               BeanStaticHelper.getBean(PropertiesDefault.class).getYamlFile().getPrefixFileToGet());
 
     public static final String LFCR = "\n \r";
@@ -72,10 +75,10 @@ public enum ArgsEnum {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("\t");
-        sb.append(argument).append(LFCR);
-        sb.append("Descrição : \t'").append(description).append(LFCR);
-        sb.append("Valor Padrão : \t'").append(defaultValue).append(LFCR);
+        final StringBuilder sb = new StringBuilder();
+        sb.append("\tArgumento    : \t").append(argument).append(LFCR);
+        sb.append("\tDescrição    : \t").append(description).append(LFCR);
+        sb.append("\tValor Padrão : \t").append(defaultValue).append(LFCR);
         return sb.toString();
     }
 }

@@ -1,6 +1,13 @@
 spring:
   main:
     banner-mode: off
+logging:
+  level:
+    org:
+      tools:
+        dev:
+          agile:
+            projectfeaturestart: OFF
 
 app:
   file-manager:

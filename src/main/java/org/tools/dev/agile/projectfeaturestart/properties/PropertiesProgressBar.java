@@ -1,4 +1,4 @@
-package org.time.gpo.cielo.extractenvvarsfromyaml.properties;
+package org.tools.dev.agile.projectfeaturestart.properties;
 
 import lombok.Data;
 import lombok.Getter;

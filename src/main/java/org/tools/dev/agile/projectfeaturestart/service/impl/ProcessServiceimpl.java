@@ -1,4 +1,4 @@
-package org.time.gpo.cielo.extractenvvarsfromyaml.service.impl;
+package org.tools.dev.agile.projectfeaturestart.service.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,19 +7,14 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
-import org.time.gpo.cielo.extractenvvarsfromyaml.helper.FileManagerEnvHelper;
-import org.time.gpo.cielo.extractenvvarsfromyaml.helper.FileManagerYamlHelper;
-import org.time.gpo.cielo.extractenvvarsfromyaml.helper.RepositoryGitHelper;
-import org.time.gpo.cielo.extractenvvarsfromyaml.properties.PropertiesProcess;
-import org.time.gpo.cielo.extractenvvarsfromyaml.service.ProcessService;
+import org.tools.dev.agile.projectfeaturestart.helper.FileManagerEnvHelper;
+import org.tools.dev.agile.projectfeaturestart.helper.FileManagerYamlHelper;
+import org.tools.dev.agile.projectfeaturestart.helper.RepositoryGitHelper;
+import org.tools.dev.agile.projectfeaturestart.properties.PropertiesProcess;
+import org.tools.dev.agile.projectfeaturestart.service.ProcessService;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Queue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.stream.Stream;
 
 @AllArgsConstructor
 @Service

@@ -1,12 +1,12 @@
-package org.time.gpo.cielo.extractenvvarsfromyaml;
+package org.tools.dev.agile.projectfeaturestart;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.time.gpo.cielo.extractenvvarsfromyaml.enums.ArgsEnum;
-import org.time.gpo.cielo.extractenvvarsfromyaml.properties.PropertiesProcess;
-import org.time.gpo.cielo.extractenvvarsfromyaml.service.ProcessService;
+import org.tools.dev.agile.projectfeaturestart.enums.ArgsEnum;
+import org.tools.dev.agile.projectfeaturestart.properties.PropertiesProcess;
+import org.tools.dev.agile.projectfeaturestart.service.ProcessService;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,15 +31,15 @@ public class ExtractEnvVarsFromYamlApplication implements CommandLineRunner {
             System.out.println("Documentação dos argumentos pra a executar a extração.\r\n\n");
             showDocArgs();
             showDocArqsRequired();
+        } else {
+
+            var propertiesProcess = processArgs(args);
+
+            List<String> results = processService.execute(propertiesProcess);
+
+            System.out.println("Resultados:");
+            results.stream().map("\t"::concat).forEach(System.out::println);
         }
-
-        var propertiesProcess = processArgs(args);
-
-        List<String> results = processService.execute(propertiesProcess);
-
-        System.out.println("Resultados:");
-        results.stream().map("\t"::concat).forEach(System.out::println);
-
     }
 
     private PropertiesProcess processArgs(String...args) {

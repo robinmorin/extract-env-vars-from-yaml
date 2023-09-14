@@ -8,7 +8,7 @@
         <version>2.7.10</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.time.cielo</groupId>
+    <groupId>org.tools.dev.agile</groupId>
     <artifactId>extract-env-vars-from-yaml</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>extract-env-vars-from-yaml</name>
